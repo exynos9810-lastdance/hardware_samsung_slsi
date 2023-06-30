@@ -108,6 +108,7 @@ LOCAL_CFLAGS += -Wno-unused-parameter
 ifeq ($(TARGET_BUILD_VARIANT), user)
 LOCAL_CFLAGS += -Wno-unused-variable
 endif
+LOCAL_CFLAGS += -Wthread-safety
 
 LOCAL_MODULE := libexynosdisplay
 LOCAL_MODULE_TAGS := optional
@@ -149,6 +150,7 @@ LOCAL_C_INCLUDES += \
 
 LOCAL_CFLAGS := -DHLOG_CODE=0
 LOCAL_CFLAGS += -DLOG_TAG=\"hwc-service\"
+LOCAL_CFLAGS += -Wthread-safety
 
 LOCAL_SRC_FILES := \
 	libhwcService/IExynosHWC.cpp \
@@ -193,6 +195,7 @@ LOCAL_HEADER_LIBRARIES := libhardware_legacy_headers libbinder_headers libexynos
 
 LOCAL_CFLAGS := -DHLOG_CODE=0
 LOCAL_CFLAGS += -DLOG_TAG=\"hwc-2\"
+LOCAL_CFLAGS += -Wthread-safety
 
 ifeq ($(BOARD_USES_HWC_SERVICES),true)
 LOCAL_CFLAGS += -DUSES_HWC_SERVICES
